@@ -1,0 +1,43 @@
+//Created By: Nicholas Brean
+//Created On: September 2018
+//Created to return a board foot
+
+import java.util.*;
+public class BoardFoot {
+	
+	
+	public static void main(String args[]) {
+		Scanner userInput = new Scanner(System.in);
+		
+		double length;
+		double width;
+		double volume;
+		double negativeCheck;
+
+		System.out.println("Enter a Length.");
+		length = userInput.nextInt();
+		System.out.println("Enter a Width.");
+		width = userInput.nextInt();
+		negativeCheck = boardFoot(length, width);
+		if(negativeCheck == -1) {
+			System.out.print("Please dont use negative values");
+			System.exit(0);
+		}
+		volume = boardFoot(length, width);
+		System.out.print(volume);
+		
+	}
+	
+	
+	public static double boardFoot(double length, double width) {
+
+		if (width < 0 || length < 0 ) {	
+			return -1;
+		}else {
+		double height;
+		height = (144 / width)/length;
+		return height;
+		
+	}
+	}
+}
